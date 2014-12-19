@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC4E59B91A435C2D00A43B8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4E59B81A435C2D00A43B8D /* AppDelegate.m */; };
+		FC4E59BB1A44AA9D00A43B8D /* Intercept-armv7.s in Sources */ = {isa = PBXBuildFile; fileRef = FC4E59BA1A44AA9D00A43B8D /* Intercept-armv7.s */; };
+		FC4E59BD1A44B24500A43B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E59BC1A44B24500A43B8D /* Main.storyboard */; };
+		FC4E59BF1A44BD7400A43B8D /* Intercept-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = FC4E59BE1A44BD7400A43B8D /* Intercept-arm64.s */; };
+		FCA801A11A3FE2B900475002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801A01A3FE2B900475002 /* main.m */; };
+		FCA801BB1A3FE2B900475002 /* BarbWireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801BA1A3FE2B900475002 /* BarbWireTests.m */; };
+		FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */ = {isa = PBXBuildFile; fileRef = FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */; };
+		FCA801C71A40B85100475002 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA801C61A40B85100475002 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCA801B51A3FE2B900475002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA801931A3FE2B900475002 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA8019A1A3FE2B900475002;
+			remoteInfo = BarbWire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC4E59B71A435C2D00A43B8D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC4E59B81A435C2D00A43B8D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC4E59BA1A44AA9D00A43B8D /* Intercept-armv7.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-armv7.s"; sourceTree = "<group>"; };
+		FC4E59BC1A44B24500A43B8D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FC4E59BE1A44BD7400A43B8D /* Intercept-arm64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-arm64.s"; sourceTree = "<group>"; };
+		FCA8019B1A3FE2B900475002 /* BarbWire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarbWire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA801A01A3FE2B900475002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarbWireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA801B91A3FE2B900475002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA801BA1A3FE2B900475002 /* BarbWireTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarbWireTests.m; sourceTree = "<group>"; };
+		FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-x86-64.s"; sourceTree = "<group>"; };
+		FCA801C61A40B85100475002 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FCA801C81A40D9DB00475002 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCA801981A3FE2B900475002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA801C71A40B85100475002 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA801B11A3FE2B900475002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC4E59C01A44CAAB00A43B8D /* Intercept */ = {
+			isa = PBXGroup;
+			children = (
+				FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */,
+				FC4E59BA1A44AA9D00A43B8D /* Intercept-armv7.s */,
+				FC4E59BE1A44BD7400A43B8D /* Intercept-arm64.s */,
+			);
+			name = Intercept;
+			sourceTree = "<group>";
+		};
+		FC5318261A44DB7800943800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCA801C61A40B85100475002 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCA801921A3FE2B900475002 = {
+			isa = PBXGroup;
+			children = (
+				FCA8019D1A3FE2B900475002 /* BarbWire */,
+				FC5318261A44DB7800943800 /* Frameworks */,
+				FCA801B71A3FE2B900475002 /* BarbWireTests */,
+				FCA8019C1A3FE2B900475002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCA8019C1A3FE2B900475002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8019B1A3FE2B900475002 /* BarbWire.app */,
+				FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCA8019D1A3FE2B900475002 /* BarbWire */ = {
+			isa = PBXGroup;
+			children = (
+				FCA801A01A3FE2B900475002 /* main.m */,
+				FC4E59C01A44CAAB00A43B8D /* Intercept */,
+				FC4E59B71A435C2D00A43B8D /* AppDelegate.h */,
+				FC4E59B81A435C2D00A43B8D /* AppDelegate.m */,
+				FCA801C81A40D9DB00475002 /* Info.plist */,
+				FC4E59BC1A44B24500A43B8D /* Main.storyboard */,
+			);
+			path = BarbWire;
+			sourceTree = "<group>";
+		};
+		FCA801B71A3FE2B900475002 /* BarbWireTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCA801BA1A3FE2B900475002 /* BarbWireTests.m */,
+				FCA801B81A3FE2B900475002 /* Supporting Files */,
+			);
+			path = BarbWireTests;
+			sourceTree = "<group>";
+		};
+		FCA801B81A3FE2B900475002 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA801B91A3FE2B900475002 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCA8019A1A3FE2B900475002 /* BarbWire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWire" */;
+			buildPhases = (
+				FCA801971A3FE2B900475002 /* Sources */,
+				FCA801981A3FE2B900475002 /* Frameworks */,
+				FCA801991A3FE2B900475002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarbWire;
+			productName = BarbWire;
+			productReference = FCA8019B1A3FE2B900475002 /* BarbWire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCA801B31A3FE2B900475002 /* BarbWireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWireTests" */;
+			buildPhases = (
+				FCA801B01A3FE2B900475002 /* Sources */,
+				FCA801B11A3FE2B900475002 /* Frameworks */,
+				FCA801B21A3FE2B900475002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA801B61A3FE2B900475002 /* PBXTargetDependency */,
+			);
+			name = BarbWireTests;
+			productName = BarbWireTests;
+			productReference = FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCA801931A3FE2B900475002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Yahoo;
+				TargetAttributes = {
+					FCA8019A1A3FE2B900475002 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					FCA801B31A3FE2B900475002 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FCA8019A1A3FE2B900475002;
+					};
+				};
+			};
+			buildConfigurationList = FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "BarbWire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCA801921A3FE2B900475002;
+			productRefGroup = FCA8019C1A3FE2B900475002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCA8019A1A3FE2B900475002 /* BarbWire */,
+				FCA801B31A3FE2B900475002 /* BarbWireTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCA801991A3FE2B900475002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC4E59BD1A44B24500A43B8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA801B21A3FE2B900475002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCA801971A3FE2B900475002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA801A11A3FE2B900475002 /* main.m in Sources */,
+				FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */,
+				FC4E59B91A435C2D00A43B8D /* AppDelegate.m in Sources */,
+				FC4E59BF1A44BD7400A43B8D /* Intercept-arm64.s in Sources */,
+				FC4E59BB1A44AA9D00A43B8D /* Intercept-armv7.s in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA801B01A3FE2B900475002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA801BB1A3FE2B900475002 /* BarbWireTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCA801B61A3FE2B900475002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA8019A1A3FE2B900475002 /* BarbWire */;
+			targetProxy = FCA801B51A3FE2B900475002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FCA801BC1A3FE2B900475002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCA801BD1A3FE2B900475002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCA801BF1A3FE2B900475002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
+				INFOPLIST_FILE = BarbWire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = BarbWire;
+			};
+			name = Debug;
+		};
+		FCA801C01A3FE2B900475002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
+				INFOPLIST_FILE = BarbWire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = BarbWire;
+			};
+			name = Release;
+		};
+		FCA801C21A3FE2B900475002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BarbWireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = BarbWireTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarbWire.app/BarbWire";
+			};
+			name = Debug;
+		};
+		FCA801C31A3FE2B900475002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BarbWireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = BarbWireTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarbWire.app/BarbWire";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "BarbWire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA801BC1A3FE2B900475002 /* Debug */,
+				FCA801BD1A3FE2B900475002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA801BF1A3FE2B900475002 /* Debug */,
+				FCA801C01A3FE2B900475002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA801C21A3FE2B900475002 /* Debug */,
+				FCA801C31A3FE2B900475002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCA801931A3FE2B900475002 /* Project object */;
+}
