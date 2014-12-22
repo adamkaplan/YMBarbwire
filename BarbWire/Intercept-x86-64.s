@@ -33,7 +33,7 @@
 #define a5d r8d
 #define a6  r9
 #define a6d r9d
-#define tmp r12
+#define tmp r11
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -162,26 +162,21 @@ LExit_$0:
 //
 //////////////////////////////////////////////////////////////////////
 
-ENTRY callbackAssemblyMonster
+ENTRY messengerHookAsm
 
     //int3
     SaveRegisters
-
-    call _testMethod
-
+    call _barbWireTestFunction
     movq %rax, %tmp
-
     RestoreRegisters
 
     testq %tmp, %tmp
-
     je YAssertationFailed
-
     jmpq *%tmp
 
 YAssertationFailed:
     ret
 
-END_ENTRY callbackAssemblyMonster
+END_ENTRY messengerHookAsm
 
 #endif

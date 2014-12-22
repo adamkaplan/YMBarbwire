@@ -15,6 +15,7 @@
 		FCA801BB1A3FE2B900475002 /* BarbWireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801BA1A3FE2B900475002 /* BarbWireTests.m */; };
 		FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */ = {isa = PBXBuildFile; fileRef = FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */; };
 		FCA801C71A40B85100475002 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA801C61A40B85100475002 /* UIKit.framework */; };
+		FCB8127B1A48C5B200731A78 /* Barbwire.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB8127A1A48C5B200731A78 /* Barbwire.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-x86-64.s"; sourceTree = "<group>"; };
 		FCA801C61A40B85100475002 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCA801C81A40D9DB00475002 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCB812791A48C5B200731A78 /* Barbwire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barbwire.h; sourceTree = "<group>"; };
+		FCB8127A1A48C5B200731A78 /* Barbwire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barbwire.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 			children = (
 				FCA801A01A3FE2B900475002 /* main.m */,
 				FC4E59C01A44CAAB00A43B8D /* Intercept */,
+				FCB812791A48C5B200731A78 /* Barbwire.h */,
+				FCB8127A1A48C5B200731A78 /* Barbwire.m */,
 				FC4E59B71A435C2D00A43B8D /* AppDelegate.h */,
 				FC4E59B81A435C2D00A43B8D /* AppDelegate.m */,
 				FCA801C81A40D9DB00475002 /* Info.plist */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA801A11A3FE2B900475002 /* main.m in Sources */,
+				FCB8127B1A48C5B200731A78 /* Barbwire.m in Sources */,
 				FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */,
 				FC4E59B91A435C2D00A43B8D /* AppDelegate.m in Sources */,
 				FC4E59BF1A44BD7400A43B8D /* Intercept-arm64.s in Sources */,

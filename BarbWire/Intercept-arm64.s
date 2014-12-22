@@ -108,10 +108,10 @@ LExit_$0:
 //
 //////////////////////////////////////////////////////////////////////
 
-ENTRY callbackAssemblyMonster
+ENTRY messengerHookAsm
 
     SaveRegisters                   // Save parameter registers
-    bl _testMethod                  // Call function hook
+    bl _barbWireTestFunction        // Call function hook
     mov x9, x0                      // Save the return register
     RestoreRegisters                // Restore parameter registers
 
@@ -121,6 +121,6 @@ ENTRY callbackAssemblyMonster
 YAssertationFailed:
     ret
 
-END_ENTRY callbackAssemblyMonster
+END_ENTRY messengerHookAsm
 
 #endif
