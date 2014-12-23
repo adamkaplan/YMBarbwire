@@ -18,6 +18,7 @@
 		FCB8127B1A48C5B200731A78 /* Barbwire.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB8127A1A48C5B200731A78 /* Barbwire.m */; };
 		FCB8127E1A4905EF00731A78 /* Intercept.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB8127C1A4905EF00731A78 /* Intercept.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FCB812811A49063400731A78 /* BarbwireConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB812801A49063400731A78 /* BarbwireConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FCFB38ED1A49D674006FACBB /* NSObject+Barbwire.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFB38EC1A49D674006FACBB /* NSObject+Barbwire.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		FCB8127D1A4905EF00731A78 /* Intercept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Intercept.h; sourceTree = "<group>"; };
 		FCB8127F1A49063400731A78 /* BarbwireConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarbwireConfig.h; sourceTree = "<group>"; };
 		FCB812801A49063400731A78 /* BarbwireConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarbwireConfig.m; sourceTree = "<group>"; };
+		FCFB38EB1A49D674006FACBB /* NSObject+Barbwire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Barbwire.h"; sourceTree = "<group>"; };
+		FCFB38EC1A49D674006FACBB /* NSObject+Barbwire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Barbwire.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +121,14 @@
 				FCB8127A1A48C5B200731A78 /* Barbwire.m */,
 				FCB8127F1A49063400731A78 /* BarbwireConfig.h */,
 				FCB812801A49063400731A78 /* BarbwireConfig.m */,
+				FCFB38EB1A49D674006FACBB /* NSObject+Barbwire.h */,
+				FCFB38EC1A49D674006FACBB /* NSObject+Barbwire.m */,
 				FC4E59B71A435C2D00A43B8D /* AppDelegate.h */,
 				FC4E59B81A435C2D00A43B8D /* AppDelegate.m */,
 				FCA801A01A3FE2B900475002 /* main.m */,
 				FCA801C81A40D9DB00475002 /* Info.plist */,
 				FC4E59BC1A44B24500A43B8D /* Main.storyboard */,
 			);
-			name = Barbwire;
 			path = Barbwire;
 			sourceTree = "<group>";
 		};
@@ -134,7 +138,6 @@
 				FCA801BA1A3FE2B900475002 /* BarbwireTests.m */,
 				FCA801B81A3FE2B900475002 /* Supporting Files */,
 			);
-			name = BarbwireTests;
 			path = BarbwireTests;
 			sourceTree = "<group>";
 		};
@@ -251,6 +254,7 @@
 				FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */,
 				FC4E59BF1A44BD7400A43B8D /* Intercept-arm64.s in Sources */,
 				FC4E59BB1A44AA9D00A43B8D /* Intercept-armv7.s in Sources */,
+				FCFB38ED1A49D674006FACBB /* NSObject+Barbwire.m in Sources */,
 				FC4E59B91A435C2D00A43B8D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

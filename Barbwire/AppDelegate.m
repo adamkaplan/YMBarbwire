@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Barbwire.h"
+#import "NSObject+Barbwire.h"
 
 static dispatch_queue_t queue;
 
@@ -44,21 +44,22 @@ static Test *target;
 
     // Manually test....
     target = [Test new];
-    //[Barbwire wire:target selector:@selector(test) thread:[NSThread mainThread]];
-    //[Barbwire wire:target selector:@selector(description) thread:[NSThread mainThread]];
-    [Barbwire wire:target selector:@selector(description) queue:dispatch_get_main_queue()];
-    [Barbwire wire:[Test class] selector:@selector(pop:) queue:dispatch_get_main_queue()];
-    [Barbwire wire:[Test class] selector:@selector(description) queue:dispatch_get_main_queue()];
+    //[target wire:@selector(test) thread:[NSThread mainThread]];
+    //[target wire:@selector(description) thread:[NSThread mainThread]];
+    [target wire:@selector(description) queue:dispatch_get_main_queue()];
+    [Test wire:@selector(pop:) queue:dispatch_get_main_queue()];
+    [Test wire:@selector(description) queue:dispatch_get_main_queue()];
+
     
     queue = dispatch_queue_create("Queue", DISPATCH_QUEUE_CONCURRENT);
     Test *testBg = [Test new];
-    [Barbwire wire:testBg selector:@selector(test) queue:queue];
+    [testBg wire:@selector(test) queue:queue];
     //[Barbwire wire:testBg selector:@selector(pop:) queue:queue]; // FAIL
     
     
     [Test pop:1]; // PASS
     [target test]; // PASS
-    [testBg test]; // FAIL
+    //[testBg test]; // FAIL
     NSLog(@"Pass desc: %@", [Test description]); // PASS
     
     
