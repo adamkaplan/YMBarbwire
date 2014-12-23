@@ -7,7 +7,9 @@
 //
 
 #import "Barbwire.h"
+#import "BarbwireConfig.h"
 #import <objc/runtime.h>
+#import <pthread/pthread.h>
 
 //////////////////////////////////////////////////////////////////////
 // Data Definitions
@@ -20,63 +22,12 @@ typedef id(*ObjCDispatchSignature)(id,SEL,...);
 typedef void(*ObjCDispatchSignature)(void);
 #endif
 
-/* A basic struct would be more efficient, but we'd need to override dealloc to free it... and that is not fun.
-struct BarbwireConfig {
-    __unsafe_unretained dispatch_queue_t queuePointer;
-    __unsafe_unretained NSThread *threadPointer;
-    IMP functionImp;
-    IMP destructorImp;
-};
-typedef struct BarbwireConfig BarbwireConfig;
-*/
-@interface BarbwireConfig : NSObject {
-    @package
-    __unsafe_unretained dispatch_queue_t queuePointer;
-    __unsafe_unretained NSThread *threadPointer;
-    IMP functionImp;
-    IMP destructorImp;
-}
-@end
-
-@implementation BarbwireConfig
-@end
-
-//////////////////////////////////////////////////////////////////////
-// Static Variables
-//////////////////////////////////////////////////////////////////////
-
-static const void *BarbWireConfigKey = @"BarbWireConfigKey";
-
 //////////////////////////////////////////////////////////////////////
 // C-Function Prototypes
 //////////////////////////////////////////////////////////////////////
 #pragma mark - C Functions
 
 extern id messengerHookAsm(id, SEL, ...);
-void* barbWireTestFunction(id me, SEL sel, ...);
-
-//////////////////////////////////////////////////////////////////////
-// C-Function Implementations
-//////////////////////////////////////////////////////////////////////
-
-void* barbWireTestFunction(id me, SEL sel, ...) {
-    
-    // Objects cannot be disposed of between objc_msgSend and this method
-    __unsafe_unretained BarbwireConfig *config = objc_getAssociatedObject(me, BarbWireConfigKey);
-    if (!config) {
-        return nil;
-    }
-    
-    if (config->threadPointer != [NSThread currentThread]) {
-        NSCAssert(false, @"-[%p %@] must be called on thread %@, not %@",
-                  me, NSStringFromSelector(sel), config->threadPointer, [NSThread currentThread]);
-        return nil;
-    }
-    else {
-        NSLog(@"Ok! %p", config->functionImp);
-        return config->functionImp;
-    }
-}
 
 //////////////////////////////////////////////////////////////////////
 // Barbwire Implementations
@@ -89,7 +40,6 @@ void* barbWireTestFunction(id me, SEL sel, ...) {
 + (void)wire:(id<NSObject>)target selector:(SEL)selector thread:(NSThread *)thread {
     
     BarbwireConfig *config = [BarbwireConfig new];
-    config->queuePointer = NULL;
     config->threadPointer = thread;
 
     [self p_wire:target selector:selector config:config];
@@ -99,7 +49,6 @@ void* barbWireTestFunction(id me, SEL sel, ...) {
 
     BarbwireConfig *config = [BarbwireConfig new];
     config->queuePointer = queue;
-    config->threadPointer = NULL;
     
     [self p_wire:target selector:selector config:config];
 }
@@ -117,11 +66,14 @@ void* barbWireTestFunction(id me, SEL sel, ...) {
     }
     
     // Swizzle in the verifier method
-    IMP imp = method_setImplementation(method, (ObjCDispatchSignature)messengerHookAsm);
+    IMP imp = class_replaceMethod(clazz, selector, (ObjCDispatchSignature)messengerHookAsm, method_getTypeEncoding(method));
+    if (!imp) {
+        // If a new method was added (via subclassing), imp is NULL. Use superclass method as functionImp.
+        imp = method_getImplementation(method);
+    }
     
     // Store allowed barb wire configuration into this object
     config->functionImp = imp;
-    //®NSLog(@"%p", imp);
     
     objc_setAssociatedObject(target, BarbWireConfigKey, config, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

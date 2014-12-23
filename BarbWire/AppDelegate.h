@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Test : NSObject
-- (NSString *)description;
-- (void)test;
-@end
-
 @interface AppDelegate : NSObject <UIApplicationDelegate>
-
-@property (nonatomic) Test *target;
 
 @end

@@ -9,20 +9,27 @@
 #import "AppDelegate.h"
 #import "Barbwire.h"
 
+
+@interface Test : NSObject
+- (void)test;
+@end
+
 @implementation Test
 - (void)test {
-    NSLog(@"I'm here, %@", self);
+    NSLog(@"Test: %@", self);
 }
+/*
 - (NSString *)description {
-    return @"I am";
+    return [@"(Custom Description) " stringByAppendingString:[super description]];
 }
+ */
 @end
+
 static Test *target;
 
-//////////////////////////////////////////////////////////////////////
-// Class Implementation
-//////////////////////////////////////////////////////////////////////
+#
 #pragma mark - Implementation
+#
 
 @implementation AppDelegate
 
@@ -31,10 +38,11 @@ static Test *target;
 
     // Manually test....
     target = [Test new];
-    [Barbwire wire:target selector:@selector(test) thread:[NSThread mainThread]];
+    //[Barbwire wire:target selector:@selector(test) thread:[NSThread mainThread]];
+    //[Barbwire wire:target selector:@selector(description) thread:[NSThread mainThread]];
+    [Barbwire wire:target selector:@selector(description) queue:dispatch_get_main_queue()];
     
-    //NSLog(@"%@", target);
-    [target test];
+    [target test]; // PASS
     
     [NSThread detachNewThreadSelector:@selector(die) toTarget:self withObject:nil];
     
@@ -43,9 +51,7 @@ static Test *target;
 
 - (void)die {
     [NSThread sleepForTimeInterval:2.5];
-    //[self foo:0xbadf00d];
-    [target test];
-    //NSLog(@"%@", self.target);
+    [target test]; // FAIL
 }
 
 @end
