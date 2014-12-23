@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BarbWire.xcodeproj">
+      location = "self:Barbwire.xcodeproj">
    </FileRef>
 </Workspace>

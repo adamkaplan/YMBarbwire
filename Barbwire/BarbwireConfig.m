@@ -1,6 +1,6 @@
 //
 //  BarbwireConfig.m
-//  BarbWire
+//  Barbwire
 //
 //  Created by Adam Kaplan on 12/22/14.
 //  Copyright (c) 2014 Yahoo. All rights reserved.

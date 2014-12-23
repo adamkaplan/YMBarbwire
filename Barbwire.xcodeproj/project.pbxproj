@@ -12,7 +12,7 @@
 		FC4E59BD1A44B24500A43B8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4E59BC1A44B24500A43B8D /* Main.storyboard */; };
 		FC4E59BF1A44BD7400A43B8D /* Intercept-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = FC4E59BE1A44BD7400A43B8D /* Intercept-arm64.s */; };
 		FCA801A11A3FE2B900475002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801A01A3FE2B900475002 /* main.m */; };
-		FCA801BB1A3FE2B900475002 /* BarbWireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801BA1A3FE2B900475002 /* BarbWireTests.m */; };
+		FCA801BB1A3FE2B900475002 /* BarbwireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA801BA1A3FE2B900475002 /* BarbwireTests.m */; };
 		FCA801C51A3FE47A00475002 /* Intercept-x86-64.s in Sources */ = {isa = PBXBuildFile; fileRef = FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */; };
 		FCA801C71A40B85100475002 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA801C61A40B85100475002 /* UIKit.framework */; };
 		FCB8127B1A48C5B200731A78 /* Barbwire.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB8127A1A48C5B200731A78 /* Barbwire.m */; };
@@ -26,7 +26,7 @@
 			containerPortal = FCA801931A3FE2B900475002 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FCA8019A1A3FE2B900475002;
-			remoteInfo = BarbWire;
+			remoteInfo = Barbwire;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,11 +36,11 @@
 		FC4E59BA1A44AA9D00A43B8D /* Intercept-armv7.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-armv7.s"; sourceTree = "<group>"; };
 		FC4E59BC1A44B24500A43B8D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC4E59BE1A44BD7400A43B8D /* Intercept-arm64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-arm64.s"; sourceTree = "<group>"; };
-		FCA8019B1A3FE2B900475002 /* BarbWire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarbWire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA8019B1A3FE2B900475002 /* Barbwire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barbwire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA801A01A3FE2B900475002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarbWireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA801B41A3FE2B900475002 /* Barbwire.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Barbwire.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA801B91A3FE2B900475002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCA801BA1A3FE2B900475002 /* BarbWireTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarbWireTests.m; sourceTree = "<group>"; };
+		FCA801BA1A3FE2B900475002 /* BarbwireTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarbwireTests.m; sourceTree = "<group>"; };
 		FCA801C41A3FE47A00475002 /* Intercept-x86-64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = "Intercept-x86-64.s"; sourceTree = "<group>"; };
 		FCA801C61A40B85100475002 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FCA801C81A40D9DB00475002 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,9 +94,9 @@
 		FCA801921A3FE2B900475002 = {
 			isa = PBXGroup;
 			children = (
-				FCA8019D1A3FE2B900475002 /* BarbWire */,
+				FCA8019D1A3FE2B900475002 /* Barbwire */,
 				FC5318261A44DB7800943800 /* Frameworks */,
-				FCA801B71A3FE2B900475002 /* BarbWireTests */,
+				FCA801B71A3FE2B900475002 /* BarbwireTests */,
 				FCA8019C1A3FE2B900475002 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,16 +104,15 @@
 		FCA8019C1A3FE2B900475002 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FCA8019B1A3FE2B900475002 /* BarbWire.app */,
-				FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */,
+				FCA8019B1A3FE2B900475002 /* Barbwire.app */,
+				FCA801B41A3FE2B900475002 /* Barbwire.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FCA8019D1A3FE2B900475002 /* BarbWire */ = {
+		FCA8019D1A3FE2B900475002 /* Barbwire */ = {
 			isa = PBXGroup;
 			children = (
-				FCA801A01A3FE2B900475002 /* main.m */,
 				FC4E59C01A44CAAB00A43B8D /* Intercept */,
 				FCB812791A48C5B200731A78 /* Barbwire.h */,
 				FCB8127A1A48C5B200731A78 /* Barbwire.m */,
@@ -121,19 +120,22 @@
 				FCB812801A49063400731A78 /* BarbwireConfig.m */,
 				FC4E59B71A435C2D00A43B8D /* AppDelegate.h */,
 				FC4E59B81A435C2D00A43B8D /* AppDelegate.m */,
+				FCA801A01A3FE2B900475002 /* main.m */,
 				FCA801C81A40D9DB00475002 /* Info.plist */,
 				FC4E59BC1A44B24500A43B8D /* Main.storyboard */,
 			);
-			path = BarbWire;
+			name = Barbwire;
+			path = Barbwire;
 			sourceTree = "<group>";
 		};
-		FCA801B71A3FE2B900475002 /* BarbWireTests */ = {
+		FCA801B71A3FE2B900475002 /* BarbwireTests */ = {
 			isa = PBXGroup;
 			children = (
-				FCA801BA1A3FE2B900475002 /* BarbWireTests.m */,
+				FCA801BA1A3FE2B900475002 /* BarbwireTests.m */,
 				FCA801B81A3FE2B900475002 /* Supporting Files */,
 			);
-			path = BarbWireTests;
+			name = BarbwireTests;
+			path = BarbwireTests;
 			sourceTree = "<group>";
 		};
 		FCA801B81A3FE2B900475002 /* Supporting Files */ = {
@@ -147,9 +149,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FCA8019A1A3FE2B900475002 /* BarbWire */ = {
+		FCA8019A1A3FE2B900475002 /* Barbwire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWire" */;
+			buildConfigurationList = FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "Barbwire" */;
 			buildPhases = (
 				FCA801971A3FE2B900475002 /* Sources */,
 				FCA801981A3FE2B900475002 /* Frameworks */,
@@ -159,14 +161,14 @@
 			);
 			dependencies = (
 			);
-			name = BarbWire;
-			productName = BarbWire;
-			productReference = FCA8019B1A3FE2B900475002 /* BarbWire.app */;
+			name = Barbwire;
+			productName = Barbwire;
+			productReference = FCA8019B1A3FE2B900475002 /* Barbwire.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FCA801B31A3FE2B900475002 /* BarbWireTests */ = {
+		FCA801B31A3FE2B900475002 /* BarbwireTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWireTests" */;
+			buildConfigurationList = FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbwireTests" */;
 			buildPhases = (
 				FCA801B01A3FE2B900475002 /* Sources */,
 				FCA801B11A3FE2B900475002 /* Frameworks */,
@@ -177,9 +179,9 @@
 			dependencies = (
 				FCA801B61A3FE2B900475002 /* PBXTargetDependency */,
 			);
-			name = BarbWireTests;
-			productName = BarbWireTests;
-			productReference = FCA801B41A3FE2B900475002 /* BarbWireTests.xctest */;
+			name = BarbwireTests;
+			productName = BarbwireTests;
+			productReference = FCA801B41A3FE2B900475002 /* Barbwire.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "BarbWire" */;
+			buildConfigurationList = FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "Barbwire" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -213,8 +215,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FCA8019A1A3FE2B900475002 /* BarbWire */,
-				FCA801B31A3FE2B900475002 /* BarbWireTests */,
+				FCA8019A1A3FE2B900475002 /* Barbwire */,
+				FCA801B31A3FE2B900475002 /* BarbwireTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA801BB1A3FE2B900475002 /* BarbWireTests.m in Sources */,
+				FCA801BB1A3FE2B900475002 /* BarbwireTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +268,7 @@
 /* Begin PBXTargetDependency section */
 		FCA801B61A3FE2B900475002 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FCA8019A1A3FE2B900475002 /* BarbWire */;
+			target = FCA8019A1A3FE2B900475002 /* Barbwire */;
 			targetProxy = FCA801B51A3FE2B900475002 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -357,9 +359,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = NO;
-				INFOPLIST_FILE = BarbWire/Info.plist;
+				INFOPLIST_FILE = Barbwire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = BarbWire;
+				PRODUCT_NAME = Barbwire;
 			};
 			name = Debug;
 		};
@@ -368,9 +370,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = NO;
-				INFOPLIST_FILE = BarbWire/Info.plist;
+				INFOPLIST_FILE = Barbwire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = BarbWire;
+				PRODUCT_NAME = Barbwire;
 			};
 			name = Release;
 		};
@@ -386,10 +388,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BarbWireTests/Info.plist;
+				INFOPLIST_FILE = BarbwireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = BarbWireTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarbWire.app/BarbWire";
+				PRODUCT_NAME = Barbwire;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barbwire.app/Barbwire";
 			};
 			name = Debug;
 		};
@@ -401,17 +403,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BarbWireTests/Info.plist;
+				INFOPLIST_FILE = BarbwireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = BarbWireTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarbWire.app/BarbWire";
+				PRODUCT_NAME = Barbwire;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barbwire.app/Barbwire";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "BarbWire" */ = {
+		FCA801961A3FE2B900475002 /* Build configuration list for PBXProject "Barbwire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCA801BC1A3FE2B900475002 /* Debug */,
@@ -420,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWire" */ = {
+		FCA801BE1A3FE2B900475002 /* Build configuration list for PBXNativeTarget "Barbwire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCA801BF1A3FE2B900475002 /* Debug */,
@@ -429,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbWireTests" */ = {
+		FCA801C11A3FE2B900475002 /* Build configuration list for PBXNativeTarget "BarbwireTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCA801C21A3FE2B900475002 /* Debug */,

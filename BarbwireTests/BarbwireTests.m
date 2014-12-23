@@ -1,6 +1,6 @@
 //
-//  BarbWireTests.m
-//  BarbWireTests
+//  BarbwireTests.m
+//  BarbwireTests
 //
 //  Created by Adam Kaplan on 12/15/14.
 //  Copyright (c) 2014 Adam Kaplan. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface BarbWireTests : XCTestCase
+@interface BarbwireTests : XCTestCase
 
 @end
 
-@implementation BarbWireTests
+@implementation BarbwireTests
 
 - (void)setUp {
     [super setUp];

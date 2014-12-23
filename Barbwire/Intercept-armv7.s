@@ -1,6 +1,6 @@
 //
 //  AppDelegate-armv7.s
-//  BarbWire
+//  Barbwire
 //
 //  Created by Adam Kaplan on 12/19/14.
 //  Copyright (c) 2014 Adam Kaplan. All rights reserved.

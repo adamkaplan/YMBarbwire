@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  BarbWire
+//  Barbwire
 //
 //  Created by Adam Kaplan on 12/18/14.
 //  Copyright (c) 2014 Adam Kaplan. All rights reserved.
