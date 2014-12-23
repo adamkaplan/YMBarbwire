@@ -3,7 +3,7 @@
 //  Barbwire
 //
 //  Created by Adam Kaplan on 12/22/14.
-//  Copyright (c) 2014 Yahoo. All rights reserved.
+//  Copyright (c) 2014 Adam Kaplan. All rights reserved.
 //
 
 #import "Barbwire.h"
@@ -67,12 +67,16 @@ extern id messengerHookAsm(id, SEL, ...);
     }
     
     // Swizzle in the verifier method
-    IMP imp = class_replaceMethod(clazz, selector, (ObjCDispatchSignature)messengerHookAsm, method_getTypeEncoding(method));
-    if (!imp) {
-        // If a new method was added (via subclassing), imp is NULL. Use superclass method as functionImp.
-        imp = method_getImplementation(method);
+    IMP imp = method_getImplementation(method);
+    if (imp != (ObjCDispatchSignature)messengerHookAsm) {
+        IMP replacedImp = class_replaceMethod(clazz, selector, (ObjCDispatchSignature)messengerHookAsm, method_getTypeEncoding(method));
+        if (replacedImp) {
+            // If a new method was added (via subclassing), imp is NULL. Use superclass method as functionImp.
+            imp = replacedImp;
+        }
     }
     
+    // Associate the proper barbwire configuration
     BarbwireConfig *config = objc_getAssociatedObject(target, selector);
     if (!config) {
         config = [BarbwireConfig new];
