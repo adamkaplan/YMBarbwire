@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Barbwire.h"
 
+static dispatch_queue_t queue;
 
 @interface Test : NSObject
 + (BOOL)pop:(int)count;
@@ -49,14 +50,19 @@ static Test *target;
     [Barbwire wire:[Test class] selector:@selector(pop:) queue:dispatch_get_main_queue()];
     [Barbwire wire:[Test class] selector:@selector(description) queue:dispatch_get_main_queue()];
     
-    [target test]; // PASS
+    queue = dispatch_queue_create("Queue", DISPATCH_QUEUE_CONCURRENT);
+    Test *testBg = [Test new];
+    [Barbwire wire:testBg selector:@selector(test) queue:queue];
+    //[Barbwire wire:testBg selector:@selector(pop:) queue:queue]; // FAIL
+    
     
     [Test pop:1]; // PASS
-    
+    [target test]; // PASS
+    [testBg test]; // FAIL
     NSLog(@"Pass desc: %@", [Test description]); // PASS
     
-    [NSThread detachNewThreadSelector:@selector(die) toTarget:self withObject:nil];
     
+    [NSThread detachNewThreadSelector:@selector(die) toTarget:self withObject:nil];
     return YES;
 }
 

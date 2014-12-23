@@ -37,6 +37,14 @@ extern id messengerHookAsm(id, SEL, ...);
 
 #pragma mark - Public
 
++ (void)wire:(id)target thread:(NSThread *)thread {
+    
+}
+
++ (void)wire:(id)target queue:(dispatch_queue_t)queue {
+    
+}
+
 + (void)wire:(id)target selector:(SEL)selector thread:(NSThread *)thread {
     [self p_wire:target selector:selector thread:thread queue:nil];
 }
@@ -54,7 +62,8 @@ extern id messengerHookAsm(id, SEL, ...);
     //Method method = class_getClassMethod(self, selector); // Handle class methods? They seem to work.
     Method method = class_getInstanceMethod(clazz, selector);
     if (!method) {
-        return;
+        char prefix = [target class] == target ? '+' : '-';
+        NSAssert(false, @"Barbwire cannot wire method that does not exist %c[%@ %@]", prefix, [target class], NSStringFromSelector(selector));
     }
     
     // Swizzle in the verifier method
