@@ -8,8 +8,6 @@
 
 #import "BarbwireConfig.h"
 
-const void *BarbWireConfigKey = @"BarbWireConfigKey";
-
 @implementation BarbwireConfig
 
 @end

@@ -10,8 +10,8 @@
 
 @interface Barbwire : NSObject
 
-+ (void)wire:(id<NSObject>)target selector:(SEL)selector thread:(NSThread *)thread;
++ (void)wire:(id)target selector:(SEL)selector thread:(NSThread *)thread;
 
-+ (void)wire:(id<NSObject>)target selector:(SEL)selector queue:(dispatch_queue_t)queue;
++ (void)wire:(id)target selector:(SEL)selector queue:(dispatch_queue_t)queue;
 
 @end

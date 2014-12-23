@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern const void *BarbWireConfigKey;
-
 @interface BarbwireConfig : NSObject {
     @package
     __unsafe_unretained dispatch_queue_t queuePointer;

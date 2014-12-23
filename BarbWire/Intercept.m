@@ -21,7 +21,7 @@
 void* barbWireTestFunction(__unsafe_unretained id self, __unsafe_unretained SEL _cmd/*, ...*/) {
     
     // Objects cannot be disposed of between objc_msgSend and this method
-    __unsafe_unretained BarbwireConfig *config = objc_getAssociatedObject(self, BarbWireConfigKey);
+    __unsafe_unretained BarbwireConfig *config = objc_getAssociatedObject(self, _cmd);
     if (!config) {
         return nil;
     }
