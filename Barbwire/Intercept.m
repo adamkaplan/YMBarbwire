@@ -19,11 +19,19 @@
 
 
 void* barbWireTestFunction(__unsafe_unretained id self, __unsafe_unretained SEL _cmd/*, ...*/) {
-    
-    // Objects cannot be disposed of between objc_msgSend and this method
+
     __unsafe_unretained BarbwireConfig *config = objc_getAssociatedObject(self, _cmd);
     if (!config) {
-        return nil;
+        // If the object instance didn't have any config, check it's class instance.  "wireAll"
+        // impls will store the global configs in the class instance itself. Can this cause
+        // class vs instance selector conflicts? If so, can we fix?
+        __unsafe_unretained Class clazz = object_getClass(self);
+        if (clazz != self) {
+            config = objc_getAssociatedObject(clazz, _cmd);
+            if (!config) {
+                return nil;
+            }
+        }
     }
     
     if (config->threadPointer) {
@@ -44,5 +52,5 @@ void* barbWireTestFunction(__unsafe_unretained id self, __unsafe_unretained SEL 
         return config->functionImp;
     }
     
-    return nil;
+    return config->functionImp;
 }

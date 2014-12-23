@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "Barbwire.h"
+#import "NSObject+Barbwire.h"
+#import "UIView+Barbwire.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 static dispatch_queue_t queue;
 
@@ -41,26 +43,34 @@ static Test *target;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    queue = dispatch_queue_create("Queue", DISPATCH_QUEUE_CONCURRENT);
 
+    UIView *v = [[UIView alloc] init];
+    [UIView wireAll];
+    
+    dispatch_async(queue, ^{
+        v.frame = CGRectZero;
+        //v.hidden = YES; // FAIL
+    });
+    return YES;
+    
     // Manually test....
     target = [Test new];
-    //[Barbwire wire:target selector:@selector(test) thread:[NSThread mainThread]];
-    //[Barbwire wire:target selector:@selector(description) thread:[NSThread mainThread]];
-    [Barbwire wire:target selector:@selector(description) queue:dispatch_get_main_queue()];
-    [Barbwire wire:[Test class] selector:@selector(pop:) queue:dispatch_get_main_queue()];
-    [Barbwire wire:[Test class] selector:@selector(description) queue:dispatch_get_main_queue()];
-    
-    queue = dispatch_queue_create("Queue", DISPATCH_QUEUE_CONCURRENT);
+    //[target wire:@selector(test) thread:[NSThread mainThread]];
+    //[target wire:@selector(description) thread:[NSThread mainThread]];
+    //[target wire:@selector(description) queue:dispatch_get_main_queue()];
+    [Test wire:@selector(pop:) queue:dispatch_get_main_queue()];
+    [Test wire:@selector(description) queue:dispatch_get_main_queue()];
+
     Test *testBg = [Test new];
-    [Barbwire wire:testBg selector:@selector(test) queue:queue];
+    [testBg wire:@selector(test) queue:queue];
     //[Barbwire wire:testBg selector:@selector(pop:) queue:queue]; // FAIL
     
     
     [Test pop:1]; // PASS
     [target test]; // PASS
-    [testBg test]; // FAIL
+    //[testBg test]; // FAIL
     NSLog(@"Pass desc: %@", [Test description]); // PASS
-    
     
     [NSThread detachNewThreadSelector:@selector(die) toTarget:self withObject:nil];
     return YES;
@@ -72,6 +82,8 @@ static Test *target;
     //[target test]; // FAIL
 
     //[Test pop:20]; // FAIL
+    
+    NSLog(@"Pass desc: %@", [target description]); // PASS
     
     NSLog(@"Fail desc: %@", [Test description]); // FAIL
 }
