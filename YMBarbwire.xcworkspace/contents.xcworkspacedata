@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:YMBarbwire"
+      name = "YMBarbwire">
+      <Group
+         location = "group:asm"
+         name = "asm">
+         <FileRef
+            location = "group:arm64.s">
+         </FileRef>
+         <FileRef
+            location = "group:armv7.s">
+         </FileRef>
+         <FileRef
+            location = "group:x86_64.s">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:categories"
+         name = "categories">
+         <FileRef
+            location = "group:NSObject+YMBarbwire.h">
+         </FileRef>
+         <FileRef
+            location = "group:NSObject+YMBarbwire.m">
+         </FileRef>
+         <FileRef
+            location = "group:UIView+YMBarbwire.h">
+         </FileRef>
+         <FileRef
+            location = "group:UIView+YMBarbwire.m">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:YMBarb.h">
+      </FileRef>
+      <FileRef
+         location = "group:YMBarb.m">
+      </FileRef>
+      <FileRef
+         location = "group:YMBarbConfig.h">
+      </FileRef>
+      <FileRef
+         location = "group:YMBarbConfig.m">
+      </FileRef>
+      <FileRef
+         location = "group:YMBarbwire.h">
+      </FileRef>
+      <FileRef
+         location = "group:YMBarbwire.m">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Example/YMBarbwire.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Example/Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
