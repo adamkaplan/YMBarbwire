@@ -24,6 +24,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		B46519FC5282BA49BAA4902C /* libPods-YMBarbwire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E153D016BC7CCF306D7EE727 /* libPods-YMBarbwire.a */; };
+		FC5705A41A9D87B40071E771 /* YMCrazyPants.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5705A31A9D87B40071E771 /* YMCrazyPants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		73FD97728A82C4FE22741F40 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE45932DA20C537B493F6F7B /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E153D016BC7CCF306D7EE727 /* libPods-YMBarbwire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YMBarbwire.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5705A21A9D87B40071E771 /* YMCrazyPants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCrazyPants.h; sourceTree = "<group>"; };
+		FC5705A31A9D87B40071E771 /* YMCrazyPants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCrazyPants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 				6003F5A5195388D20070C39A /* YMViewController.h */,
 				6003F5A6195388D20070C39A /* YMViewController.m */,
+				FC5705A21A9D87B40071E771 /* YMCrazyPants.h */,
+				FC5705A31A9D87B40071E771 /* YMCrazyPants.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -363,6 +368,7 @@
 			files = (
 				6003F59E195388D20070C39A /* YMAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* YMViewController.m in Sources */,
+				FC5705A41A9D87B40071E771 /* YMCrazyPants.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

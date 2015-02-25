@@ -103,7 +103,7 @@ LExit_$0:
 
 //////////////////////////////////////////////////////////////////////
 //
-// The Callback!
+// _messengerHook
 //
 // Save all argument registers, call the checker method, restore
 // registers and jump into the target function (which is returned
@@ -111,10 +111,10 @@ LExit_$0:
 //
 //////////////////////////////////////////////////////////////////////
 
-ENTRY messengerHookAsm
+ENTRY messengerHook
 
     SaveRegisters                   // Save parameter registers
-    bl _barbWireTestFunction        // Call function hook
+    bl _barbwire_msgSend            // Call function hook
     mov x9, x0                      // Save the return register
     RestoreRegisters                // Restore parameter registers
 
@@ -124,6 +124,6 @@ ENTRY messengerHookAsm
 YAssertationFailed:
     ret
 
-END_ENTRY messengerHookAsm
+END_ENTRY messengerHook
 
 #endif

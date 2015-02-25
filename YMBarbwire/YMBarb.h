@@ -9,4 +9,7 @@
 #import <Foundation/Foundation.h>
 
 // Excluding unused arguments & bypassing ARC yields a huge reduction in asm prologue overhead
-void* barbWireTestFunction(__unsafe_unretained id me, SEL sel/*, ...*/);
+
+void* barbwire_msgSend(__unsafe_unretained id me, SEL sel/*, ...*/);
+
+void* barbwire_msgSend_stret(void *st_addr, __unsafe_unretained id me, SEL sel/*, ...*/);

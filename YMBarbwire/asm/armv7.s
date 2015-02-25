@@ -53,7 +53,7 @@ _$0:
 
 //////////////////////////////////////////////////////////////////////
 //
-// The Callback!
+// _messengerHook
 //
 // Save all argument registers, call the checker method, restore
 // registers and jump into the target function (which is returned
@@ -61,9 +61,9 @@ _$0:
 //
 //////////////////////////////////////////////////////////////////////
 
-ENTRY messengerHookAsm
+ENTRY messengerHook
     stmfd	sp!, {r0-r3,lr}         // Push return & parameter registers onto the stack
-    blx _barbWireTestFunction       // Call test function hook
+    blx _barbwire_msgSend           // Call test function hook
     mov r12, r0                     // Save the return value
     ldmfd	sp!, {r0-r3,lr}         // Pop return & parameter registers from the stack
 
@@ -74,6 +74,6 @@ ENTRY messengerHookAsm
 YAssertationFailed:
     bx lr
 
-END_ENTRY messengerHookAsm
+END_ENTRY messengerHook
 
 #endif

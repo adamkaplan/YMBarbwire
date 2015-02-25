@@ -154,7 +154,7 @@ LExit_$0:
 
 //////////////////////////////////////////////////////////////////////
 //
-// The Callback!
+// _messengerHook
 //
 // Save all argument registers, call the checker method, restore
 // registers and jump into the target function (which is returned
@@ -162,21 +162,47 @@ LExit_$0:
 //
 //////////////////////////////////////////////////////////////////////
 
-ENTRY messengerHookAsm
+ENTRY messengerHook
 
     //int3
     SaveRegisters
-    call _barbWireTestFunction
+    call _barbwire_msgSend
     movq %rax, %tmp
     RestoreRegisters
 
-    testq %tmp, %tmp
-    je YAssertationFailed
+    //testq %tmp, %tmp
+    //je YAssertationFailed
     jmpq *%tmp
 
 YAssertationFailed:
     ret
 
-END_ENTRY messengerHookAsm
+END_ENTRY messengerHook
+
+//////////////////////////////////////////////////////////////////////
+//
+// messengerHook_stret
+//
+// Save all argument registers, call the checker method, restore
+// registers and jump into the target function (which is returned
+// by the stret checker method)
+//
+//////////////////////////////////////////////////////////////////////
+
+ENTRY messengerHook_stret
+
+    SaveRegisters
+    call _barbwire_msgSend_stret
+    movq %rax, %tmp
+    RestoreRegisters
+
+    //testq %tmp, %tmp
+    //je YAssertationFailedStret
+    jmpq *%tmp
+
+YAssertationFailedStret:
+    ret
+
+END_ENTRY messengerHook_stret
 
 #endif

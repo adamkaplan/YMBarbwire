@@ -16,7 +16,9 @@
 #pragma mark - C Functions
 //////////////////////////////////////////////////////////////////////
 
-extern id messengerHookAsm(id, SEL, ...);
+extern id messengerHook(id, SEL, ...);
+
+extern void messengerHook_stret(void*, id, SEL, ...);
 
 //////////////////////////////////////////////////////////////////////
 // Barbwire Implementations
@@ -57,13 +59,24 @@ extern id messengerHookAsm(id, SEL, ...);
         char prefix = clazz == target ? '+' : '-';
         NSAssert(false, @"Barbwire cannot wire method that does not exist %c[%@ %@]", prefix, clazz, NSStringFromSelector(selector));
     }
+
+    // Determine the messaging type (structure return, floating point return, or other)
+    IMP targetMessengerHook;
+    char returnType;
+    method_getReturnType(method, &returnType, 1);
+    if (returnType == '{') { // stret
+        targetMessengerHook = (IMP)messengerHook_stret;
+    } else {
+        targetMessengerHook = (IMP)messengerHook;
+    }
     
     // Swizzle in the verifier method
     IMP imp = method_getImplementation(method);
-    if (imp != (IMP)messengerHookAsm) {
-        IMP replacedImp = class_replaceMethod(clazz, selector, (IMP)messengerHookAsm, method_getTypeEncoding(method));
+    if (imp != targetMessengerHook) {
+        NSLog(@"Replacing method %@\t\t\tencoding %s", NSStringFromSelector(selector), method_getTypeEncoding(method));
+        IMP replacedImp = class_replaceMethod(clazz, selector, targetMessengerHook, method_getTypeEncoding(method));
         if (replacedImp) {
-            // If a new method was added (via subclassing), imp is NULL. Chain to the superclass' method.
+            // If a new method was added (via subclassing), imp is NULL. Chain to the superclass' method instead.
             imp = replacedImp;
         }
     }
