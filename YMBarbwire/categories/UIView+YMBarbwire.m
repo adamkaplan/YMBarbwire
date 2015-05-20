@@ -41,7 +41,7 @@ static NSArray *prefixBlacklist;
             NSLog(@"Method: %@", NSStringFromSelector(selector));
         }
         //if (returnTypeEncoding == '?' || returnTypeEncoding == '{') {
-            if (false
+//            if (false
 //               returnTypeEncoding == 'c'
 //            || returnTypeEncoding == 'i'
 //            || returnTypeEncoding == 's'
@@ -55,7 +55,7 @@ static NSArray *prefixBlacklist;
 //            || returnTypeEncoding == 'f'
 //            || returnTypeEncoding == 'd'
 //            || returnTypeEncoding == 'B'
-//            || returnTypeEncoding == 'v' // <--- no UI
+//            || returnTypeEncoding == 'v' // <--- no UI???
 //            || returnTypeEncoding == '*'
 //            || returnTypeEncoding == '@'
 //            || returnTypeEncoding == '#'    // stret?
@@ -66,7 +66,7 @@ static NSArray *prefixBlacklist;
 //            || returnTypeEncoding == 'bs'
 //            || returnTypeEncoding == '^'
 //            || returnTypeEncoding == '?'  // fpret
-        ) { continue; }
+//        ) { continue; }
         
         // Skip methods with disallowed prefixes
         size_t length = strlen(name);

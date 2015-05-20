@@ -9,6 +9,7 @@
 #import "YMBarbwire.h"
 #import "YMBarbConfig.h"
 
+#include <TargetConditionals.h>
 #import <objc/runtime.h>
 
 
@@ -18,7 +19,9 @@
 
 extern id messengerHook(id, SEL, ...);
 
+#if __x86_64__  &&  TARGET_IPHONE_SIMULATOR
 extern void messengerHook_stret(void*, id, SEL, ...);
+#endif
 
 //////////////////////////////////////////////////////////////////////
 // Barbwire Implementations
@@ -60,17 +63,9 @@ extern void messengerHook_stret(void*, id, SEL, ...);
         NSAssert(false, @"Barbwire cannot wire method that does not exist %c[%@ %@]", prefix, clazz, NSStringFromSelector(selector));
     }
 
-    // Determine the messaging type (structure return, floating point return, or other)
-    IMP targetMessengerHook;
-    char returnType;
-    method_getReturnType(method, &returnType, 1);
-    if (returnType == '{') { // stret
-        targetMessengerHook = (IMP)messengerHook_stret;
-    } else {
-        targetMessengerHook = (IMP)messengerHook;
-    }
     
     // Swizzle in the verifier method
+    IMP targetMessengerHook = (IMP)messengerHook;
     IMP imp = method_getImplementation(method);
     if (imp != targetMessengerHook) {
         NSLog(@"Replacing method %@\t\t\tencoding %s", NSStringFromSelector(selector), method_getTypeEncoding(method));

@@ -9,7 +9,6 @@
 #import "YMBarb.h"
 #import "YMBarbConfig.h"
 #import <objc/runtime.h>
-objc_msgSend_stret
 
 /*
  This file should be compiled with ARC-disabled for performance reasons.
@@ -48,24 +47,22 @@ static inline void* barbwireTestFunc(__unsafe_unretained id self, SEL _cmd) {
         //NSLog(@"super: %s class? %d meta? %d", class_getName(object_getClass(thing)), object_isClass(thing), class_isMetaClass(object_getClass(thing)));
     } while(thing);
     
-    /*
-     if (config->threadPointer) {
-     NSAssert(config->threadPointer == [NSThread currentThread], // should be equals:?
-     @"-[%s %s] must be called on thread %@ (was %@)",
-     object_getClassName(self), sel_getName(_cmd), config->threadPointer, [NSThread currentThread]);
-     return config->functionImp;
-     }
-     
-     if (config->queuePointer) {
-     __BW_PRAGMA_PUSH_NO_WARNINGS // ignore dispatch_get_current_queue() deprecation (allowed for debugging per docs)
-     NSAssert(config->queuePointer == dispatch_get_current_queue(),
-     @"-[%s %s] must be called on queue %@ (was %@)",
-     object_getClassName(self), sel_getName(_cmd), config->queuePointer, dispatch_get_current_queue());
-     __BW_PRAGMA_POP_NO_WARNINGS
-     
-     return config->functionImp;
-     }
-     */
+    if (config->threadPointer) {
+        NSAssert(config->threadPointer == [NSThread currentThread], // should be equals:?
+                 @"-[%s %s] must be called on thread %@ (was %@)",
+                 object_getClassName(self), sel_getName(_cmd), config->threadPointer, [NSThread currentThread]);
+        return config->functionImp;
+    }
+    
+    if (config->queuePointer) {
+        __BW_PRAGMA_PUSH_NO_WARNINGS // ignore dispatch_get_current_queue() deprecation (allowed for debugging per docs)
+        NSAssert(config->queuePointer == dispatch_get_current_queue(),
+                 @"-[%s %s] must be called on queue %@ (was %@)",
+                 object_getClassName(self), sel_getName(_cmd), config->queuePointer, dispatch_get_current_queue());
+        __BW_PRAGMA_POP_NO_WARNINGS
+        
+        return config->functionImp;
+    }
     
     return config->functionImp;
 }
