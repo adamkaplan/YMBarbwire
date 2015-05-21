@@ -7,6 +7,29 @@
 
 ## Usage
 
+```
+#import <YMBarbwire/YMBarbwire.h>
+#import <YMBarbwire/UIView+YMBarbwire.h>
+
++ (void)load {
+  [UIView wireAll]; // wire all supported methods of UIView
+}
+
+- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)opts {
+  dispatch_queue_t queue = dispatch_queue_create("nuke", DISPATCH_QUEUE_CONCURRENT);
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), queue, ^{
+    // This will assert immediately; Barbwire detects the call into UIView from background thread.
+    [self.window setNeedsLayout];
+  });
+}
+
+// Supported methods of UIView, currently
+// - Methods that do not begin with _
+// - Methods that do not return structures or functions
+```
+
+## Demo
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
