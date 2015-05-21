@@ -90,7 +90,7 @@
 }
 
 - (struct_t)structRet {
-    struct_t t = { .i = 1, .f = 3.5f, .c = 'c' };
+    struct_t t = { .a = UINT64_MAX, .b = UINT64_MAX, .c = UINT64_MAX, .d = UINT64_MAX, .e = UINT64_MAX, .f = UINT64_MAX };
     return t;
 }
 

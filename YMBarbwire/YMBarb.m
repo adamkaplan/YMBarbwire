@@ -67,11 +67,13 @@ static inline void* barbwireTestFunc(__unsafe_unretained id self, SEL _cmd) {
     return config->functionImp;
 }
 
-void* barbwire_msgSend_stret(void *st_addr, __unsafe_unretained id zelf, SEL sel) {
-    //return barbwireTestFunc(zelf, sel);
-    return malloc(1);
-}
-
 void* barbwire_msgSend(__unsafe_unretained id self, SEL _cmd) {
     return barbwireTestFunc(self, _cmd);
 }
+
+// One day...
+//void* barbwire_msgSend_stret(void *st_addr, __unsafe_unretained id self, SEL sel) {
+//}
+
+//void* barbwire_msgSend_fpret(void *fp, __unsafe_unretained id self, SEL sel) {
+//}

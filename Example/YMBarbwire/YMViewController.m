@@ -40,7 +40,10 @@
     [super viewDidAppear:animated];
     
     _queue = dispatch_queue_create("Queue", DISPATCH_QUEUE_CONCURRENT);
-    //[self testViewBarb];
+    [self testViewBarb];
+    return;
+    
+    
     
     Class class = [YMCrazyPants class];
     NSThread *thread = [NSThread currentThread];
@@ -131,7 +134,7 @@
     NSAssert(selectorVal == @selector(selectorRet), @"selector");
     
     struct_t structVal = [pants structRet];
-    NSAssert(structVal.i == 1 && structVal.f == 3.5f && structVal.c == 'c', @"struct");
+    NSAssert(structVal.a == UINT64_MAX && structVal.f == UINT64_MAX, @"struct");
     
     union_t unionVal = [pants unionRet];
     NSAssert(unionVal.i == 256 && unionVal.a == 256 && unionVal.b == 0 && unionVal.c[1] == '\x01', @"union");

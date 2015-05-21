@@ -12,4 +12,6 @@
 
 void* barbwire_msgSend(__unsafe_unretained id me, SEL sel/*, ...*/);
 
-void* barbwire_msgSend_stret(void *st_addr, __unsafe_unretained id me, SEL sel/*, ...*/);
+//void* barbwire_msgSend_stret(void *st_addr, __unsafe_unretained id me, SEL sel/*, ...*/);
+
+//void* barbwire_msgSend_fpret(void *fp, __unsafe_unretained id me, SEL sel/*, ...*/);

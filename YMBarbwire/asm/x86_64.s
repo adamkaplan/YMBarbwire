@@ -33,7 +33,6 @@
 #define a5d r8d
 #define a6  r9
 #define a6d r9d
-#define tmp r11
 
 /////////////////////////////////////////////////////////////////////
 //
@@ -77,7 +76,7 @@
 	movdqa	%xmm6, -0x20(%rbp)
 	push	%a6
 	movdqa	%xmm7, -0x10(%rbp)
-	
+
 .endmacro
 
 /////////////////////////////////////////////////////////////////////
@@ -167,42 +166,16 @@ ENTRY messengerHook
     //int3
     SaveRegisters
     call _barbwire_msgSend
-    movq %rax, %tmp
+    movq %rax, %r11
     RestoreRegisters
 
-    //testq %tmp, %tmp
-    //je YAssertationFailed
-    jmpq *%tmp
+    testq %r11, %r11
+    je AssertationFailed
+    jmpq *%r11
 
-YAssertationFailed:
+AssertationFailed:
     ret
 
 END_ENTRY messengerHook
-
-//////////////////////////////////////////////////////////////////////
-//
-// messengerHook_stret
-//
-// Save all argument registers, call the checker method, restore
-// registers and jump into the target function (which is returned
-// by the stret checker method)
-//
-//////////////////////////////////////////////////////////////////////
-
-ENTRY messengerHook_stret
-
-    SaveRegisters
-    call _barbwire_msgSend_stret
-    movq %rax, %tmp
-    RestoreRegisters
-
-    //testq %tmp, %tmp
-    //je YAssertationFailedStret
-    jmpq *%tmp
-
-YAssertationFailedStret:
-    ret
-
-END_ENTRY messengerHook_stret
 
 #endif

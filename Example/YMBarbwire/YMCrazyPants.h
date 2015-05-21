@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 typedef struct _struct_t {
-    int i;
-    float f;
-    char c;
+    uint64_t a;
+    uint64_t b;
+    uint64_t c;
+    uint64_t d;
+    uint64_t e;
+    uint64_t f;
 } struct_t;
 
 typedef union _union_t {

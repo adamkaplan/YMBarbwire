@@ -115,11 +115,11 @@ ENTRY messengerHook
 
     SaveRegisters                   // Save parameter registers
     bl _barbwire_msgSend            // Call function hook
-    mov x9, x0                      // Save the return register
+    mov x12, x0                     // Save the return register
     RestoreRegisters                // Restore parameter registers
 
-    cbz x9, YAssertationFailed      // If assert, return
-    br x9                           // Otherwise call original function
+    cbz x12, YAssertationFailed     // If assert, return
+    br x12                          // Otherwise call original function
 
 YAssertationFailed:
     ret
